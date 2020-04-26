@@ -1,2 +1,2 @@
 # ProjetoAplicadoTwitterClone
-Treinando PHP, Bootstrap e MySQL
+## Treinando PHP, jQuery, Bootstrap e MySQL
