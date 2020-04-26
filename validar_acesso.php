@@ -1,11 +1,12 @@
 <?php 
-	//o comando session sempre deve ser a primeira instrução, antes de qualquer entrada ou saida
+	//por convenção comando session sempre deve ser a primeira instrução
 	session_start();
 
 	require_once('db.class.php');//Adicionando a classe de conexão com BD
 	
 	$user = $_POST['usuario'];
-	$senha = $_POST['senha'];
+	//criptografia MD5
+	$senha = md5($_POST['senha']);
 
 	/*
 	//degug
@@ -13,7 +14,7 @@
 	echo "<br>";
 	echo $senha;*/
 
-	$sql = "SELECT usuario, email FROM  usuarios WHERE usuario = '$user' AND senha = '$senha' ";
+	$sql = "SELECT id, usuario, email FROM  usuarios WHERE usuario = '$user' AND senha = '$senha' ";
 
 	$objDb = new db();
 	$link = $objDb->conecta_mysql(); //link recebe o retorno da funçao conecta_mysql
@@ -28,6 +29,7 @@
 		
 		if (isset($dados_usuario['usuario'])) {
 			//o indice usuário passa a receber os dados do retorno a consulta do banco de dados contido no array
+			$_SESSION['id_usuario'] = $dados_usuario['id'];
 			$_SESSION['usuario'] = $dados_usuario['usuario'];
 			$_SESSION['email'] = $dados_usuario['email'];
 

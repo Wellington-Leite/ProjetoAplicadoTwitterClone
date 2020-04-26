@@ -73,7 +73,7 @@
 	            	<!--MENU DROPDWON -->
 					<ul class="dropdown-menu" aria-labelledby="entrar">
 						<div class="col-md-12">
-				    		<p><h3>Você possui uma conta?</h3>
+				    		<p><h4>Você possui uma conta?</h4>
 				    		<br />
 							<form method="post" action="validar_acesso.php" id="formLogin">
 								<div class="form-group">
@@ -115,7 +115,6 @@
 		</div>
 
 
-	   <!-- </div> -->
 		
 		<!-- Acrescentar os recursos js do bootstrap somente quando os elementos estivetem renderizados no 
 		navegador por isso foi adicionado ao final da pagina html ou php, para que a associação de todos os

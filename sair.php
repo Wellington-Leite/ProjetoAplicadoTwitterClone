@@ -2,11 +2,11 @@
 	
 	session_start();
 
+	//Limpando as variáveis de sessão
 	unset($_SESSION['usuario']);
 	unset($_SESSION['email']);
 
-	//Podendo redirecionar novamente para index
+	header('Location:index.php');
 
 ?>
 
-LOGOUT FEITO, VOLTE SEMPRE!!!

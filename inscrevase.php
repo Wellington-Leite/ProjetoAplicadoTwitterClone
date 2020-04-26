@@ -1,3 +1,11 @@
+<?php
+
+	//if ternário
+  $erro_user 	= 	isset($_GET['erro_user']) 	? $_GET['erro_user'] : 0;
+  $erro_email 	= 	isset($_GET['erro_email']) 	? $_GET['erro_email'] : 0;
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -48,10 +56,20 @@
 				<form method="post" action="registra_usuario.php" id="formCadastrarse">
 					<div class="form-group">
 						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required="requiored">
+						<?php
+							if ($erro_user == 1) {
+								echo "<font color='FF0000'> Usuário já existe";
+							}
+						?>
 					</div>
 
 					<div class="form-group">
 						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+						<?php
+							if ($erro_email == 1) {
+								echo "<font color='FF0000'> E-mail já existe";
+							}
+						?>
 					</div>
 					
 					<div class="form-group">
